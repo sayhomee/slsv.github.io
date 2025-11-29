@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Partner with Us | SLSV 2026&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- 复用 V27 核心视觉系统 --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-dark: #050507;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-panel: rgba(20, 25, 40, 0.65);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary-cyan: #00f3ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary-purple: #bc13fe;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--gradient-main: linear-gradient(90deg, #bc13fe 0%, #00f3ff 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #a0a0c0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--glass-border: 1px solid rgba(255, 255, 255, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* 背景极光稍微调暗一点，为了衬托更亮的粒子线条 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.1), transparent 40%),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.05), transparent 40%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex; flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 粒子画布背景 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- 导航栏 (简约版) --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(5, 5, 10, 0.6); backdrop-filter: blur(10px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.logo { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: 1px; text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.logo span { color: var(--primary-cyan); text-shadow: 0 0 15px rgba(0, 243, 255, 0.8); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.back-link {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 30px; transition: 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.back-link:hover { border-color: var(--primary-cyan); color: #fff; box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); background: rgba(0, 243, 255, 0.1); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- 表单容器 (Glassmorphism) --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 60px 20px; position: relative; z-index: 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(15, 20, 30, 0.6); /* 稍微调低透明度，让背景线条透出来 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(15px); /* 模糊度降低，让背景更清晰 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255,255,255,0.15); border-top: 1px solid rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px; padding: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 60px rgba(0,0,0,0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-header { text-align: center; margin-bottom: 40px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--primary-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0,243,255,0.3); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-desc { color: var(--text-muted); font-size: 1rem; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- 表单控件 (Neon Glow) --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group { margin-bottom: 25px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: #ccc; font-weight: 600; letter-spacing: 0.5px; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>input, select, textarea {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; padding: 15px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.4);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #fff; font-size: 1rem; font-family: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none; transition: 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 聚焦时的荧光效果 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input:focus, select:focus, textarea:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--primary-cyan);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 243, 255, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 25px rgba(0, 243, 255, 0.25);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Placeholder 颜色 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::placeholder { color: rgba(255,255,255,0.3); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>select option { background: #0a0a0e; color: #fff; padding: 10px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* --- 提交按钮 (Hot &amp; Shining) --- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-submit {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; padding: 16px; margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--gradient-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none; border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 20px rgba(188, 19, 254, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-submit:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 40px rgba(0, 243, 255, 0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filter: brightness(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer { padding: 30px; text-align: center; font-size: 0.85rem; color: #444; border-top: 1px solid rgba(255,255,255,0.05); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 移动端适配 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.form-card { padding: 30px 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.form-title { font-size: 1.8rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;canvas id="canvas-bg"&gt;&lt;/canvas&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="index.html" class="logo"&gt;SLSV &lt;span&gt;2026&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="index.html" class="back-link"&gt;← Back to Home&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="form-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="form-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="form-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="form-title"&gt;Let's Connect&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="form-desc"&gt;Fill out the form below for Sponsorship, Exhibition, or VIP access inquiries.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form action="#" method="POST"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label&gt;Full Name&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" placeholder="Enter your name" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label&gt;Business Email&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="email" placeholder="name@company.com" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label&gt;Organization / Company&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" placeholder="Company Name"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label&gt;I am interested in...&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="" disabled selected&gt;Select an option&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="sponsor"&gt;Sponsorship (Diamond / Platinum / Gold)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="booth"&gt;Exhibitor Booth (Type A / B)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="vip"&gt;VIP Dinner Access&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="speaker"&gt;Speaking Opportunity&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="media"&gt;Media Partnership&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="other"&gt;General Inquiry&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label&gt;Message / Requirements&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;textarea rows="4" placeholder="Tell us more about your goals..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="btn-submit"&gt;Submit Inquiry&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&amp;copy; 2026 Smart Living Silicon Valley. Organized by USCCCSV.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const canvas = document.getElementById('canvas-bg');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ctx = canvas.getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let particlesArray;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 鼠标交互对象</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let mouse = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>x: null,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>y: null,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radius: 150 // 鼠标吸附半径</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('mousemove', function(event) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mouse.x = event.x;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mouse.y = event.y;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function resizeCanvas() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>canvas.width = window.innerWidth;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>canvas.height = window.innerHeight;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>init();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('resize', resizeCanvas);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>class Particle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>constructor() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.x = Math.random() * canvas.width;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.y = Math.random() * canvas.height;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.size = Math.random() * 3 + 1; // [增强] 粒子变大</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.speedX = (Math.random() * 1) - 0.5; // [增强] 速度稍快</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.speedY = (Math.random() * 1) - 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>update() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.x += this.speedX;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.y += this.speedY;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 边界反弹</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.x &gt; canvas.width || this.x &lt; 0) this.speedX = -this.speedX;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (this.y &gt; canvas.height || this.y &lt; 0) this.speedY = -this.speedY;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 鼠标互动</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let dx = mouse.x - this.x;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let dy = mouse.y - this.y;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let distance = Math.sqrt(dx*dx + dy*dy);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (distance &lt; mouse.radius) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (mouse.x &lt; this.x &amp;&amp; this.x &lt; canvas.width - this.size * 10) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.x += 2;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (mouse.x &gt; this.x &amp;&amp; this.x &gt; this.size * 10) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.x -= 2;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (mouse.y &lt; this.y &amp;&amp; this.y &lt; canvas.height - this.size * 10) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.y += 2;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (mouse.y &gt; this.y &amp;&amp; this.y &gt; this.size * 10) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>this.y -= 2;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>draw() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.fillStyle = 'rgba(0, 243, 255, 1)'; // [增强] 纯亮青色，不透明</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function init() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>particlesArray = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let numberOfParticles = (canvas.width * canvas.height) / 9000; // [增强] 粒子密度增加</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; numberOfParticles; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>particlesArray.push(new Particle());</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function animate() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ctx.clearRect(0, 0, canvas.width, canvas.height);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; particlesArray.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>particlesArray[i].update();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>particlesArray[i].draw();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 连线逻辑</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let j = i; j &lt; particlesArray.length; j++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const dx = particlesArray[i].x - particlesArray[j].x;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const dy = particlesArray[i].y - particlesArray[j].y;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const distance = Math.sqrt(dx * dx + dy * dy);</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// [增强] 连线距离更长，线条更明显</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (distance &lt; 120) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// 线条透明度更高 (0.5 base)</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ctx.strokeStyle = `rgba(0, 243, 255, ${0.5 - distance/300})`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ctx.lineWidth = 1.5; // [增强] 线条变粗</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ctx.moveTo(particlesArray[i].x, particlesArray[i].y);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ctx.lineTo(particlesArray[j].x, particlesArray[j].y);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ctx.stroke();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>resizeCanvas();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>animate();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

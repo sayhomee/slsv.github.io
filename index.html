@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;SLSV 2026 One Pager&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* --- Luma One Pager Design System --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--bg-dark: #050507;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--card-bg: rgba(20, 25, 35, 0.85);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--cyan: #00f3ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--purple: #bc13fe;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--gold: #ffd700;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--gradient: linear-gradient(135deg, #bc13fe 0%, #00f3ff 100%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--text: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--muted: #aab;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0; padding: 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--bg-dark);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>/* 静态背景方便截图 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-image: radial-gradient(circle at 50% 0%, rgba(188, 19, 254, 0.2), transparent 50%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 模拟海报容器 (800px 宽度适合手机阅读) */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.poster {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #0a0a0e;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255,255,255,0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 80px rgba(0,0,0,0.8);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 顶部 Header */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 60px 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle at 50% -20%, rgba(0, 243, 255, 0.15), transparent 60%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(255,255,255,0.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tag {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: inline-block; padding: 6px 16px;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid var(--cyan); color: var(--cyan); border-radius: 50px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.8rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 3.5rem; line-height: 1.1; margin: 0 0 20px 0; color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #fff, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.meta {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--muted); font-size: 1.2rem; display: flex; justify-content: center; gap: 30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.meta span { display: flex; align-items: center; gap: 8px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 通用板块 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.section { padding: 50px 40px; border-bottom: 1px solid rgba(255,255,255,0.05); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.sec-title {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.8rem; color: #fff; margin-bottom: 30px; font-weight: 700; text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; align-items: center; justify-content: center; gap: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.sec-title::before, .sec-title::after { content: ''; width: 40px; height: 2px; background: var(--purple); opacity: 0.5; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Highlights Grid */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: rgba(255,255,255,0.03); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card h3 { color: var(--cyan); margin: 0 0 10px 0; font-size: 1.1rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card p { margin: 0; color: var(--muted); font-size: 0.9rem; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Agenda Timeline */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.timeline-item {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; gap: 20px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.time { color: var(--purple); font-weight: bold; font-family: monospace; min-width: 110px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.event h4 { margin: 0; color: #fff; font-size: 1rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.event p { margin: 5px 0 0 0; color: #666; font-size: 0.85rem; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Speakers */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.speaker-row { display: flex; justify-content: space-between; gap: 15px; text-align: center; margin-top: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.s-img { width: 70px; height: 70px; border-radius: 50%; background: #333; margin: 0 auto 10px; border: 2px solid var(--cyan); object-fit: cover;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.s-name { color: #fff; font-size: 0.85rem; font-weight: bold; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.s-title { color: var(--muted); font-size: 0.7rem; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* VIP &amp; CTA */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.vip-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15), transparent);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid var(--gold); padding: 40px; text-align: center; border-radius: 12px; margin-top: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.cta-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block; width: 100%; padding: 20px; text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--gradient); color: #fff; font-size: 1.5rem; font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-decoration: none; border-radius: 12px; margin-top: 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-transform: uppercase; letter-spacing: 2px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Footer */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.footer { padding: 30px; text-align: center; color: #444; font-size: 0.8rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.logos { display: flex; justify-content: center; gap: 30px; margin-top: 10px; opacity: 0.6; font-weight: bold; text-transform: uppercase;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="poster"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="tag"&gt;Expo &amp; Summit 2026&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Smart Living&lt;br&gt;Silicon Valley&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="meta"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;📅 Jan 10, 2026&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;📍 Computer History Museum&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="grid-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;1,000+&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Global Attendees&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;100+&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;VCs &amp; Investors&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;80+&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Exhibitors&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="sec-title"&gt;Featured Speakers&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="speaker-row"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;img src="https://ui-avatars.com/api/?name=Fiona+Ma&amp;background=00f3ff" class="s-img"&gt;&lt;div class="s-name"&gt;Fiona Ma&lt;/div&gt;&lt;div class="s-title"&gt;CA Treasurer&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;img src="https://ui-avatars.com/api/?name=Scott+R&amp;background=bc13fe" class="s-img"&gt;&lt;div class="s-name"&gt;Scott Rozelle&lt;/div&gt;&lt;div class="s-title"&gt;Stanford&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;img src="https://ui-avatars.com/api/?name=Dylan+P&amp;background=333" class="s-img"&gt;&lt;div class="s-name"&gt;Dylan Patel&lt;/div&gt;&lt;div class="s-title"&gt;SemiAnalysis&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;img src="https://ui-avatars.com/api/?name=Holly+Z&amp;background=333" class="s-img"&gt;&lt;div class="s-name"&gt;Holly Zheng&lt;/div&gt;&lt;div class="s-title"&gt;EnvisionX&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;img src="https://ui-avatars.com/api/?name=Kayvan+B&amp;background=333" class="s-img"&gt;&lt;div class="s-name"&gt;Kayvan B.&lt;/div&gt;&lt;div class="s-title"&gt;SignalRank&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="sec-title"&gt;Agenda Highlights&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="time"&gt;09:30 AM&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="event"&gt;&lt;h4&gt;Opening Remarks&lt;/h4&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="time"&gt;10:45 AM&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="event"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Panel 1: Next-Gen Chips &amp; Robotics&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Concurrent Tracks: Smart Living / Robotics&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="time"&gt;01:30 PM&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="event"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Panel 3: World Models &amp; GenAI&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;AI Entertainment &amp; Infrastructure&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="timeline-item"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="time"&gt;02:15 PM&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="event"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Panel 4: SV Venture Capital&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Navigating the Investment Market&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="vip-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 style="color:var(--gold); margin:0 0 5px 0;"&gt;VIP Gala Dinner&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p style="color:#ccc; margin:0;"&gt;18:00 - 20:30 | Exclusive Networking with Investors&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="footer"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>HOSTED BY</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="logos"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;USCCCSV&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;Deep Horizon&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;Helix Forge&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:30px; font-size:1.5rem; font-weight:bold; color:#fff;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>REGISTER NOW ON LUMA ↗</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
