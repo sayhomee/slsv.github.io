@@ -1,0 +1,46 @@
+# ==================================================
+# SLSV 2026 - ENVIRONMENT VARIABLES
+# ==================================================
+# Copy this file to .env and fill in your actual values
+# NEVER commit .env to Git!
+# ==================================================
+
+# STRIPE API KEYS
+# Get from: https://dashboard.stripe.com/apikeys
+# Use test keys (sk_test_/pk_test_) for development
+# Use live keys (sk_live_/pk_live_) for production
+STRIPE_SECRET_KEY=sk_test_your_secret_key_here
+STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+
+# STRIPE WEBHOOK SECRET
+# For local development: Run "stripe listen --forward-to localhost:3000/webhook"
+# For production: Get from Stripe Dashboard → Webhooks after creating endpoint
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+
+# STRIPE PRICE IDs
+# Create products in Stripe Dashboard → Products
+# Then copy the Price ID (starts with price_) for each product
+STRIPE_PRICE_GENERAL_ADMISSION=price_xxxxxxxxxxxxx
+STRIPE_PRICE_VIP_TICKET=price_xxxxxxxxxxxxx
+STRIPE_PRICE_EARLY_BIRD=price_xxxxxxxxxxxxx
+
+# MAILGUN CONFIGURATION
+# Get from: https://app.mailgun.com/app/account/security/api_keys
+MAILGUN_API_KEY=your_mailgun_api_key_here
+# Your Mailgun domain (e.g., mg.yourdomain.com or sandbox123.mailgun.org)
+MAILGUN_DOMAIN=your_mailgun_domain_here
+# Admin email to receive form submissions
+ADMIN_EMAIL=zeeshan@sayhomee.com
+
+# SERVER CONFIGURATION
+PORT=3000
+NODE_ENV=development
+
+# ==================================================
+# INSTRUCTIONS:
+# 1. Rename this file to: .env
+# 2. Replace all placeholder values with your actual Stripe keys
+# 3. Never share or commit the .env file
+# 4. Read SETUP.md for detailed setup instructions
+# ==================================================
+

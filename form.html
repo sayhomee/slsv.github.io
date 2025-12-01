@@ -133,41 +133,43 @@
                 <p class="form-desc">Fill out the form below for Sponsorship, Exhibition, or VIP access inquiries.</p>
             </div>
             
-            <form action="#" method="POST">
+            <form id="contactForm" action="#" method="POST">
+                <div id="formMessage" style="display: none; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;"></div>
+                
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Enter your name" required>
+                    <input type="text" name="fullName" placeholder="Enter your name" required>
                 </div>
                 
                 <div class="form-group">
                     <label>Business Email</label>
-                    <input type="email" placeholder="name@company.com" required>
+                    <input type="email" name="email" placeholder="name@company.com" required>
                 </div>
 
                 <div class="form-group">
                     <label>Organization / Company</label>
-                    <input type="text" placeholder="Company Name">
+                    <input type="text" name="organization" placeholder="Company Name">
                 </div>
 
                 <div class="form-group">
                     <label>I am interested in...</label>
-                    <select required>
+                    <select name="interest" required>
                         <option value="" disabled selected>Select an option</option>
-                        <option value="sponsor">Sponsorship (Diamond / Platinum / Gold)</option>
-                        <option value="booth">Exhibitor Booth (Type A / B)</option>
-                        <option value="vip">VIP Dinner Access</option>
-                        <option value="speaker">Speaking Opportunity</option>
-                        <option value="media">Media Partnership</option>
-                        <option value="other">General Inquiry</option>
+                        <option value="Sponsorship (Diamond / Platinum / Gold)">Sponsorship (Diamond / Platinum / Gold)</option>
+                        <option value="Exhibitor Booth (Type A / B)">Exhibitor Booth (Type A / B)</option>
+                        <option value="VIP Dinner Access">VIP Dinner Access</option>
+                        <option value="Speaking Opportunity">Speaking Opportunity</option>
+                        <option value="Media Partnership">Media Partnership</option>
+                        <option value="General Inquiry">General Inquiry</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Message / Requirements</label>
-                    <textarea rows="4" placeholder="Tell us more about your goals..."></textarea>
+                    <textarea name="message" rows="4" placeholder="Tell us more about your goals..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-submit">Submit Inquiry</button>
+                <button type="submit" class="btn-submit" id="submitBtn">Submit Inquiry</button>
             </form>
         </div>
     </div>
@@ -280,6 +282,78 @@
 
         resizeCanvas();
         animate();
+
+        // ============================================
+        // FORM SUBMISSION HANDLER
+        // ============================================
+        
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.style.opacity = '0.6';
+
+            // Hide previous messages
+            formMessage.style.display = 'none';
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                fullName: formData.get('fullName'),
+                email: formData.get('email'),
+                organization: formData.get('organization'),
+                interest: formData.get('interest'),
+                message: formData.get('message')
+            };
+
+            try {
+                // Submit form
+                const response = await fetch('/submit-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success message
+                    formMessage.style.display = 'block';
+                    formMessage.style.background = 'rgba(0, 243, 255, 0.1)';
+                    formMessage.style.border = '1px solid rgba(0, 243, 255, 0.5)';
+                    formMessage.style.color = '#00f3ff';
+                    formMessage.innerHTML = '✅ ' + result.message;
+
+                    // Reset form
+                    contactForm.reset();
+
+                    // Scroll to message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error(result.error || 'Submission failed');
+                }
+            } catch (error) {
+                // Error message
+                formMessage.style.display = 'block';
+                formMessage.style.background = 'rgba(255, 107, 107, 0.1)';
+                formMessage.style.border = '1px solid rgba(255, 107, 107, 0.5)';
+                formMessage.style.color = '#ff6b6b';
+                formMessage.innerHTML = '❌ ' + (error.message || 'Something went wrong. Please try again.');
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'SUBMIT INQUIRY';
+                submitBtn.style.opacity = '1';
+            }
+        });
     </script>
 </body>
 </html>

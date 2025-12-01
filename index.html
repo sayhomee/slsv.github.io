@@ -313,7 +313,7 @@
         </div>
     </nav>
 
-    <a href="https://luma.com/SLSV2026" target="_blank" class="float-ticket-btn" id="floatBtn">
+    <a href="#" onclick="openStripeCheckout('general'); return false;" class="float-ticket-btn" id="floatBtn">
         🎟️ <span class="lang-en">Get Tickets</span><span class="lang-cn">立即购票</span>
     </a>
 
@@ -330,7 +330,7 @@
             </div>
             
             <div class="hero-btns">
-                <a href="https://luma.com/SLSV2026" target="_blank" class="btn-base btn-focus">
+                <a href="#" onclick="openStripeCheckout('general'); return false;" class="btn-base btn-focus">
                     <span class="lang-en">Get Tickets</span><span class="lang-cn">立即购票</span>
                 </a>
                 <a href="form.html" class="btn-base btn-neon">
@@ -785,6 +785,60 @@
 
         window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
         init(); animate();
+
+        // ============================================
+        // STRIPE CHECKOUT INTEGRATION
+        // ============================================
+        
+        // Configure your Stripe Price IDs here (get from Stripe Dashboard)
+        const STRIPE_PRICES = {
+            general: 'price_1SZZEPLYr7GdKtgZhQfKeMFp', // Replace with your actual Price ID
+            vip: 'price_1SZZHWLYr7GdKtgZXrv0SQs5',      // Replace with your VIP Price ID
+            earlybird: 'price_1SZZEPLYr7GdKtgZhQfKeMFp'   // Replace with your Early Bird Price ID
+        };
+
+        async function openStripeCheckout(ticketType) {
+            // Show loading state
+            const loadingMsg = document.body.classList.contains('chinese') ? '正在跳转...' : 'Redirecting to checkout...';
+            
+            // Optional: Show a loading indicator
+            console.log(loadingMsg);
+
+            try {
+                // Get the appropriate price ID
+                const priceId = STRIPE_PRICES[ticketType] || STRIPE_PRICES.general;
+                
+                // Call your server to create checkout session
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        priceId: priceId,
+                        ticketType: ticketType
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.url) {
+                    // Redirect to Stripe Checkout
+                    window.location.href = data.url;
+                } else {
+                    throw new Error('No checkout URL returned');
+                }
+            } catch (error) {
+                console.error('Error creating checkout session:', error);
+                const errorMsg = document.body.classList.contains('chinese') 
+                    ? '抱歉，出现了错误。请稍后再试。' 
+                    : 'Sorry, something went wrong. Please try again.';
+                alert(errorMsg);
+            }
+        }
+
+        // Make function globally accessible
+        window.openStripeCheckout = openStripeCheckout;
     </script>
 </body>
 </html>

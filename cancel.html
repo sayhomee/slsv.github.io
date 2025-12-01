@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Cancelled | SLSV 2026</title>
+    <style>
+        :root {
+            --bg-dark: #050507;
+            --primary-cyan: #00f3ff;
+            --primary-purple: #bc13fe;
+            --gradient-main: linear-gradient(90deg, #bc13fe 0%, #00f3ff 100%);
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.15), transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1), transparent 40%);
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cancel-container {
+            max-width: 600px;
+            background: rgba(15, 20, 30, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cancel-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            background: rgba(255, 107, 107, 0.2);
+            border: 3px solid #ff6b6b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #ff6b6b;
+            animation: scaleIn 0.5s ease 0.3s backwards;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        p {
+            color: #aaa;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gradient-main);
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(188, 19, 254, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 243, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-cyan);
+            border: 2px solid var(--primary-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 243, 255, 0.1);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="cancel-container">
+        <div class="cancel-icon">✕</div>
+        <h1>Payment Cancelled</h1>
+        <p>Your payment was cancelled. No charges have been made to your account.</p>
+        
+        <p style="color: #888; font-size: 0.95rem; margin-bottom: 40px;">
+            If you encountered any issues or have questions, please contact our support team.
+        </p>
+
+        <div class="btn-group">
+            <a href="/" class="btn btn-primary">Try Again</a>
+            <a href="/form.html" class="btn btn-secondary">Contact Support</a>
+        </div>
+    </div>
+</body>
+</html>
+
